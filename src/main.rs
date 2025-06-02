@@ -9,14 +9,10 @@ fn main() {
         return;
     }
     let dir = &args[1];
-    let max_depth = args
-        .get(2)
-        .and_then(|s| s.parse::<usize>().ok())
-        .unwrap_or(10);
 
     let mut squasher = Squasher::new();
 
-    squasher.squash_directory(&dir);
+    squasher.squash_directory(dir);
 
     // print to dir/squash/squash.cpp
     let output_path = format!("{}/squash/squash.cpp", dir);

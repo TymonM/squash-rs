@@ -14,11 +14,6 @@ impl Squasher {
         }
     }
 
-    pub fn reset(&mut self) {
-        self.visited_files.clear();
-        self.squashed_content.clear();
-    }
-
     // Squash only .cpp files in the directory
     fn get_sources(&self, dir: fs::ReadDir) -> Vec<fs::DirEntry> {
         dir.filter_map(|entry| {
